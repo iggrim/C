@@ -1,0 +1,6 @@
+вызов окна Disasembly
+
+Build -> Rebuild
+Установить брикпоинты
+Debug -> Start
+Debug -> Debuging window -> Disasembly

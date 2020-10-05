@@ -1,0 +1,4 @@
+https://www.geeksforgeeks.org/multithreading-c-2/
+
+подключаем pthread.h
+а не threads.h

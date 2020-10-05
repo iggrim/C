@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1595710547 source:f:\temp\c_lang\!_s_prata\017\17.5\films3\list.c
+	<stdio.h>
+	<stdlib.h>
+	"list.h"
+
+1595710547 f:\temp\c_lang\!_s_prata\017\17.5\films3\list.h
+	<stdbool.h>
+
+1595710547 source:f:\temp\c_lang\!_s_prata\017\17.5\films3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"list.h"
+
+1595765607 source:f:\temp\c_lang\!_s_prata\017\17.5\films3_test\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"list.h"
+
+1595741085 f:\temp\c_lang\!_s_prata\017\17.5\films3_test\list.h
+	<stdbool.h>
+
+1595741353 source:f:\temp\c_lang\!_s_prata\017\17.5\films3_test\list.c
+	<stdio.h>
+	<stdlib.h>
+	"list.h"
+

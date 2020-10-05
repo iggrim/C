@@ -1,0 +1,11 @@
+при компил€ции указываем два файла с исходным кодом
+
+например:
+
+gcc -o 1.exe ext_func.c file_scope_stat.c 
+
+или
+
+gcc -o 1.exe file_scope_stat.c ext_func.c 
+
+очередность файлов не имеет значени€

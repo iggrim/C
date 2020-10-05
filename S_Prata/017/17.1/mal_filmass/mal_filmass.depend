@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1595084868 source:f:\temp\c_lang\!_s_prata\017\17.1\mal_filmass\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

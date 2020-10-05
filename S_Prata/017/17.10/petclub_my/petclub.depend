@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1596997762 source:f:\temp\c_lang\!_s_prata\017\17.10\petclub\main.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	"tree.h"
+
+1596632592 f:\temp\c_lang\!_s_prata\017\17.10\petclub\tree.h
+	<stdbool.h>
+
+1596900582 source:f:\temp\c_lang\!_s_prata\017\17.10\petclub\tree.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"tree.h"
+
+1597154091 source:f:\temp\c_lang\!_s_prata\017\17.10\petclub_my\main.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	"tree.h"
+
+1596632592 f:\temp\c_lang\!_s_prata\017\17.10\petclub_my\tree.h
+	<stdbool.h>
+
+1598350617 source:f:\temp\c_lang\!_s_prata\017\17.10\petclub_my\tree.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"tree.h"
+
