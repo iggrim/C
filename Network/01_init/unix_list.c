@@ -11,6 +11,11 @@ int main() {
 
     struct ifaddrs *addresses;
 
+	/*
+	Функция getifaddrs() создаёт связный список структур, описывающих  
+сетевые интерфейсы   локальной системы, и сохраняет адрес первого  
+элемента списка в *ifap. Список состоит из структур ifaddrs:
+	*/
     if (getifaddrs(&addresses) == -1) {
         printf("getifaddrs call failed\n");
         return -1;

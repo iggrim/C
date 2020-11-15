@@ -60,14 +60,12 @@ int main() {
 
     struct addrinfo *bind_address; // ----обратить внимание---, bind_address получит указатель на указатель, согласно прототипа функции getaddrinfo
     // getaddrinfo(0, "8080", &hints, &bind_address);
-    getaddrinfo(0, "5000", &hints, &bind_address); // Мы используем getaddrinfo() для заполнения структуры struct addrinfo // возвращает указатель на указатель на связанный список результатов bind_address // bind_address - указатель на на указатель
+    getaddrinfo(0, "5000", &hints, &bind_address); // Мы используем getaddrinfo() для заполнения структуры struct addrinfo // возвращает указатель на указатель на связанный список результатов bind_address // bind_address - указательна на указатель
 	/*
 	Прототип getaddrinfo
 	int getaddrinfo(const char *node, const char *service, const struct addrinfo *hints, struct addrinfo **res); // res - указательна на указатель
 	node - это имя или IP адрес хоста, к которому надо подключиться, т.е. у нас это адрес на котором будем ждать соединений // если 0 - any available network interface,
 	service - порт, на котором будем ждать соединений
-	
-	getaddrinfo(..) устанавливает значение res для указания на выделяемый динамически связанный список структур addrinfo, связанных компонентом ai_next. Существует несколько причин того, почему связанный список может содержать более одной структуры addrinfo, включая: сетевой хост, имеющий несколько адресов; службу, доступную несколькии сокетным протоколам (например, один ее адрес - это SOCK_STREAM, а второй адрес - SOCK_DGRAM).
 	*/
 
 
@@ -98,7 +96,7 @@ int main() {
 
 //3
     printf("Listening...\n");
-    if (listen(socket_listen, 10) < 0) {  // 10 соединений можно поставить в очередь
+    if (listen(socket_listen, 10) < 0) {  // 10 оединений можно поставить в очередь
         fprintf(stderr, "listen() failed. (%d)\n", GETSOCKETERRNO());
         return 1;
     }
@@ -110,9 +108,11 @@ int main() {
 	
 	// Когда новое соединение будет установлено accept создаст для него новый сокет.  
 	// Исходный сокет продолжает прослушивать новые соединения, но новый сокет, возвращаемый функцией accept(), может использоваться для отправки и получения данных через вновь установленное соединение
-//4    
+//4 
+  
+while(1) { 
 	SOCKET socket_client = accept(socket_listen,
-            (struct sockaddr*) &client_address, &client_len);  // параметр client_address типа sockaddr_storage содержит адрес IPv4 или IPv6 клиента, приводится к типу struct sockaddr 
+            (struct sockaddr*) &client_address, &client_len);  // параметр client_address типа sockaddr_storage содержащая адрес IPv4 или IPv6 клиента  приводится к типу struct sockaddr 
 			// исходный сокет продолжает прослушивать новые соединения, но новый сокет, возвращаемый функцией accept(), может использоваться для отправки и получения данных через вновь установленное соединение.	
 			// Структура SOCKADDR используется для хранения IP-адреса компьютера, участвующего в обмене данными через сокеты Windows
 			
@@ -125,14 +125,9 @@ int main() {
 
     printf("Client is connected... ");
     char address_buffer[100];  // рекомендуется где-то регистрировать сетевые подключения
-    // int getnameinfo(const struct sockaddr *sa, socklen_t salen, char *host, size_t hostlen, char *serv, size_t servlen, int flags);
-	getnameinfo((struct sockaddr*)&client_address,
-            client_len, 
-			address_buffer, // имя узла 
-			sizeof(address_buffer), 
-			0, // имя сервиса (http, ftp и т.д.)
-			0,
-            NI_NUMERICHOST); // NI_NUMERICHOST. Если этот флаг установлен, то имя машины возвращается в числовой форме(напр. 127.0.0.1). (Если этот флаг не установлен, в этом случае имя узла не будет найдено.) 
+    getnameinfo((struct sockaddr*)&client_address,
+            client_len, address_buffer, sizeof(address_buffer), 0, 0,
+            NI_NUMERICHOST);
     printf("%s\n", address_buffer);
 
 
@@ -165,6 +160,8 @@ int main() {
     CLOSESOCKET(socket_client); 
 	// #define CLOSESOCKET(s) closesocket(s) // win
 	// #define CLOSESOCKET(s) close(s)		// unix
+	
+}//while(1)
 	
     printf("Closing listening socket...\n");
     CLOSESOCKET(socket_listen);
@@ -230,17 +227,4 @@ struct sockaddr {
 };
 //sa_family будет либо AF_INET (IPv4) или AF_INET6 
 // sa_data  содержит ----адрес назначения и номер порта---- для сокета.
-*/
-
-/*
-int getnameinfo(const struct sockaddr *sa, socklen_t salen,
-                char *host, size_t hostlen,
-                char *serv, size_t servlen, 
-				int flags);
-Функция getnameinfo() предназначена для перевода сетевого адреса в имя машины, способом, который не зависит от сетевого протокола. Она сочетает в себе действия функций gethostbyaddr() и getservbyport(), и является функцией обратной функции getaddrinfo(). Аргумент sa - это указатель на структуру адреса сокета (типа sockaddr_in или sockaddr_in6) размером salen, которая содержит IP-адрес и номер порта. Аргументы host и serv указывают на буферы (размером hostlen и servlen соответственно), которые будут содержать возвращаемые значения.
-Если при вызове не требуется определять имя машины (или имя сервиса), тогда аргумент host (или serv) должен указывает на NULL или параметр hostlen (или servlen) должен быть равен нулю. Однако, по крайней мере один параметр, имя машины или имя сервиса, должно быть запрошено. 
-При успешном завершении возвращается 0, имя узла и имя сервиса. Возможно сокращение имен в буфере до указанной длины. При ошибке возвращается ненулевое значение, а глобальная переменная errno устанавливается в соответствующее значение.  
-
-Флаги. NI_NUMERICHOST. 
-Если этот флаг установлен, то имя машины возвращается в числовой форме(напр. 127.0.0.1). (Если этот флаг не установлен, в этом случае имя узла не будет найдено.) 
 */
