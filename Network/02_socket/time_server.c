@@ -55,7 +55,7 @@ int main() {
 	// hints – набор указаний для getaddrinfo() 
     memset(&hints, 0, sizeof(hints));
     hints.ai_family = AF_INET;  // IPv4
-    hints.ai_socktype = SOCK_STREAM; // потоковый сокет TCP
+    hints.ai_socktype = SOCK_STREAM; // потоковый сокет TCP // для UDP - SOCK_DGRAM;
     hints.ai_flags = AI_PASSIVE; // AI_PASSIVE указывает getaddrinfo() назначить   сокету адрес текущего хоста. Не нужно указывать свой адрес вручную. Иначе можно указать свой IP в качестве первого параметра getaddrinfo(),(у нас 0 или NULL.)
 
     struct addrinfo *bind_address; // ----обратить внимание---, bind_address получит указатель на указатель, согласно прототипа функции getaddrinfo
@@ -76,7 +76,8 @@ int main() {
     SOCKET socket_listen; // SOCKET - это typedef для беззнакового int в заголовках Winsock
 //1
     socket_listen = socket(bind_address->ai_family,
-            bind_address->ai_socktype, bind_address->ai_protocol); // ai_protocol - может быть установлен в 0 для выбора правильного протокола для заданного типа: tcp или udp
+            bind_address->ai_socktype, 
+			bind_address->ai_protocol); // ai_protocol - может быть установлен в 0 для выбора правильного протокола для заданного типа: tcp или udp
     if (!ISVALIDSOCKET(socket_listen)) {
 		// Стандартный вывод ошибок stderr, на экран
         fprintf(stderr, "socket() failed. (%d)\n", GETSOCKETERRNO());  //  макрос вызывает WSAGetLastError()
@@ -98,7 +99,7 @@ int main() {
 
 //3
     printf("Listening...\n");
-    if (listen(socket_listen, 10) < 0) {  // 10 соединений можно поставить в очередь
+    if (listen(socket_listen, 10) < 0) {  // В случае успеха возвращается ноль. При ошибке возвращается -1, а errno устанавливается должным образом.   // 10 соединений можно поставить в очередь
         fprintf(stderr, "listen() failed. (%d)\n", GETSOCKETERRNO());
         return 1;
     }
@@ -112,7 +113,8 @@ int main() {
 	// Исходный сокет продолжает прослушивать новые соединения, но новый сокет, возвращаемый функцией accept(), может использоваться для отправки и получения данных через вновь установленное соединение
 //4    
 	SOCKET socket_client = accept(socket_listen,
-            (struct sockaddr*) &client_address, &client_len);  // параметр client_address типа sockaddr_storage содержит адрес IPv4 или IPv6 клиента, приводится к типу struct sockaddr 
+            (struct sockaddr*) &client_address, &client_len);  // параметр client_address это структура типа sockaddr_storage содержит адрес IPv4 или IPv6 клиента, приводится к типу struct sockaddr 
+			// sockaddr_storage, созданна достаточно большой, чтобы содержать обе IPv4 и IPv6 структуры. Судя по некоторым вызовам вы не знаете наперёд каким адресом  загружать вашу структуру  sockaddr: IPv4 или IPv6.Так передайте эту параллельную структуру, подобную struct sockaddr, только больше, и приведите к нужному типу
 			// исходный сокет продолжает прослушивать новые соединения, но новый сокет, возвращаемый функцией accept(), может использоваться для отправки и получения данных через вновь установленное соединение.	
 			// Структура SOCKADDR используется для хранения IP-адреса компьютера, участвующего в обмене данными через сокеты Windows
 			
@@ -141,7 +143,7 @@ int main() {
 //5	
     int bytes_received = recv(socket_client, request, 1024, 0);
     printf("Received %d bytes.\n", bytes_received);
-    //printf("%.*s", bytes_received, request);
+    //printf("%.*s", bytes_received, request); // строка формата "%.*s" сообщает функции printf, то что мы хотим напечатать определенное количество символов - bytes_receive из того, что получили в ответ в массив request
 
 
     printf("Sending response...\n");
@@ -151,14 +153,14 @@ int main() {
         "Content-Type: text/plain\r\n\r\n" // Заголовок ответа HTTP заканчивается пустой строкой
         "Local time is: ";
 //6		
-    int bytes_sent = send(socket_client, response, strlen(response), 0); // ответ для браузера ( стандартные заголовоки HTTP-ответа)
+    int bytes_sent = send(socket_client, response, strlen(response), 0); // ответ для браузера ( стандартные заголовоки HTTP-ответа) // Если сокет закрыт, send() возвращает -1. 
     printf("Sent %d of %d bytes.\n", bytes_sent, (int)strlen(response));
 
     time_t timer; // В одной системе time_t может быть unsigned long, а в другой — unsigned long long.
     time(&timer); //Функция time() возвращает текущее календарное время системы. // Функция time() может вызываться либо с указателем NULL, либо с указателем на переменную time_t. В последнем случае этот аргумент также получает значение календарного времени. 
 //6
     char *time_msg = ctime(&timer); //  преобразование времени в текстовую строку
-    bytes_sent = send(socket_client, time_msg, strlen(time_msg), 0);
+    bytes_sent = send(socket_client, time_msg, strlen(time_msg), 0); // Если сокет закрыт, send() возвращает -1. 
     printf("Sent %d of %d bytes.\n", bytes_sent, (int)strlen(time_msg));
 
     printf("Closing connection...\n");
@@ -220,6 +222,9 @@ typedef struct sockaddr_storage {
   __int64 __ss_align;  // Зарезервировано. Используется компилятором для выравнивания структуры
   char    __ss_pad2[_SS_PAD2SIZE];  // Зарезервировано. Используется компилятором для выравнивания структуры
 } SOCKADDR_STORAGE, *PSOCKADDR_STORAGE;
+
+sockaddr_storage, созданна достаточно большой, чтобы содержать обе IPv4 и IPv6 
+структуры. Судя по некоторым вызовам вы не знаете наперёд каким адресом  загружать вашу структуру  sockaddr: IPv4 или IPv6.Так передайте эту параллельную структуру, подобную struct sockaddr, только больше, и приведите к нужному типу.
 */
 
 /*

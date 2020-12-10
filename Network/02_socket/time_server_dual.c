@@ -129,7 +129,7 @@ int main() {
         "Connection: close\r\n"
         "Content-Type: text/plain\r\n\r\n"
         "Local time is: ";
-    int bytes_sent = send(socket_client, response, strlen(response), 0);
+    int bytes_sent = send(socket_client, response, strlen(response), 0); // Если сокет закрыт, send() возвращает -1. 
     printf("Sent %d of %d bytes.\n", bytes_sent, (int)strlen(response));
 
     time_t timer;
