@@ -336,7 +336,7 @@ int main(int argc, char *argv[]) {
                             if ((q = strstr(body, "\r\n"))) {
                                 remaining = strtol(body, 0, 16); // преобразовать часть строки("ff9\r\n") в значение 16-й СС 
                                 if (!remaining) goto finish; // первый проход. remaining = ff9 или 4089 (в отладчике) // второй проход - remaining = 0
-                                body = q + 2; // продвигаем указатель body за r\n ("ff9r\n")
+                                body = q + 2; // продвигаем указатель body за \r\n ("ff9r\n")
                             } else {
                                 break;
                             }
