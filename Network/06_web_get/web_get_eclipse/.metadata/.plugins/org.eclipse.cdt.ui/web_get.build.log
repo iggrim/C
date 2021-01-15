@@ -1,0 +1,6 @@
+18:09:46 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+
+18:09:46 Build Finished. 0 errors, 0 warnings. (took 474ms)
+

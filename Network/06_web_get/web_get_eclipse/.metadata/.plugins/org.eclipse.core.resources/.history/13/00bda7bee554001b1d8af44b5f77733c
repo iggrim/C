@@ -1,0 +1,477 @@
+#include "chap06.h"
+
+#define TIMEOUT 5.0
+
+void parse_url(char *url, char **hostname, char **port, char** path) {
+    printf("URL: %s\n", url);
+// если параметры передаются в функцию по значению, то функция не изменяет
+// значения передаваемых аргументов. Однако, используя в качестве параметров
+// указатели, мы можем получить доступ к значению аргумента и изменить его.
+
+
+    char *p;
+    p = strstr(url, "://");
+	/*
+	strstr – поиск первого вхождения строки А в строку В.
+	#include < string.h >
+	char *strstr(const char *strB, const char *strA);
+	-----Аргументы:  
+	strB – указатель на строку, в которой ведется поиск.
+	strA – указатель на искомую строку.
+	-----Возвращаемое значение:
+	1.NULL – если строка strA не входит в строку strB. 2.Указатель на первое вхождение строки strA в строку strB.
+	Функция strstr ищет первое вхождение строки (за исключением признак конца строки), на которую указывает аргумент strA, в строку , на которую указывает аргумент strB. Если строка strA имеет нулевую длину, то функция вернет указатель на начало строки strB. 
+	*/
+
+    char *protocol = 0;
+    if (p) {
+        protocol = url;
+        *p = 0;
+        p += 3; // смещаем указатель за "://"
+    } else {
+        p = url;
+    }
+
+    if (protocol) {
+        if (strcmp(protocol, "http")) {
+            fprintf(stderr,
+                    "Unknown protocol '%s'. Only 'http' is supported.\n",
+                    protocol);
+            exit(1);
+        }
+    }
+
+    // здесь у автора недоработка // не парсится имя хоста
+    // из строки, напр. exeample.com:80
+    
+	//*hostname = p;
+    // из указателя(**hostname) на указатель(*hostname) извлекаем адрес
+    // и присваиваем ему адрес 'p'
+
+    //while (*p && *p != ':' // ??? интересный прием, я бы сделал просто *p != ':'
+    //		&& *p != '/'
+    //		&& *p != '#')
+    //		++p; // инкриментируем значение указателя
+
+    // ----------сделал так:
+    char * a;
+    char *start = p;
+    int i = 0, n = 1;
+
+    while (*p && *p != ':' && *p != '/' && *p != '#'){
+    	n++;
+    	p++;
+    }
+
+    a = (char*)malloc(n * sizeof(char));
+    for(i=0; i<n-1; i++){
+    	a[i] = *start;
+    	start++;
+    }
+
+    *hostname = a;
+	
+	// ---------------------
+
+    *port = "80";
+    if (*p == ':') {
+        //*p++ = 0;  //было  // инкриментируем значение указателя
+        p++; // исправил
+    	*port = p;  // адрес начала имени порта
+    }
+
+    while (*p && *p != '/'
+    		&& *p != '#')
+    		++p; // снова продвигаем указатель
+
+    *path = p;
+    if (*p == '/') {
+        *path = p + 1;
+    }
+    //*p = 0; было
+
+
+    while (*p && *p != '#')
+    	++p;
+
+    if (*p == '#') *p = 0;
+
+    printf("host: %s\n", *hostname);
+    printf("port: %s\n", *port);
+    printf("path: %s\n", *path);
+}
+
+//----------------------------
+
+void send_request(SOCKET s, char *hostname, char *port, char *path) {
+    char buffer[2048];
+
+    sprintf(buffer, "GET /%s HTTP/1.1\r\n", path);
+    sprintf(buffer + strlen(buffer), "Host: %s:%s\r\n", hostname, port);
+    sprintf(buffer + strlen(buffer), "Connection: close\r\n");
+    /*Если браузер поддерживает постоянные соединения, он посылает
+дополнительный заголовок в запросе:  Connection: Keep-Alive
+Затем, когда сервер получает такой запрос и генерирует ответ, он также
+добавляет в заголовок ответа Connection: Keep-Alive
+После этого соединение не разрывается, а остаётся открытым. Когда
+клиент отправляет ещё один запрос, он использует это же соединение.
+Так будет продолжаться до тех пор, пока клиент или сервер не решат,
+что обмен окончен, и одна из сторон завершит соединение.
+Если бы клиент вместо этого отправил Connection: Close, это означало бы, что
+клиент намеревался закрыть TCP-соединение после получения HTTP-ответа. */
+    sprintf(buffer + strlen(buffer), "User-Agent: honpwc web_get 1.0\r\n");
+    sprintf(buffer + strlen(buffer), "\r\n");
+
+    send(s, buffer, strlen(buffer), 0);
+    printf("Sent Headers:\n%s", buffer);
+
+/*
+sprintf
+Это похоже на printf, за исключением того, что вывод сохраняется в массиве символов s, а не записывается в поток. Для обозначения конца строки пишется нулевой символ.
+Функция sprintf возвращает количество символов, хранящихся в массиве s, не включая завершающий нулевой символ.
+Поведение этой функции не определено, если копирование происходит между перекрывающимися объектами - например, если s также задан в качестве аргумента для печати под управлением преобразования% s. .
+Предупреждение: функция sprintf может быть опасной, потому что она потенциально может выводить больше символов, чем может поместиться в размер выделения строки s. Помните, что ширина поля, указанная в спецификации преобразования, является минимальным значением.
+Чтобы избежать этой проблемы, вы можете использовать snprintf или asprintf, описанные ниже.
+Заголовочные файлы:
+stdio.h*/
+}
+
+//-----------------------------
+
+SOCKET connect_to_host(char *hostname, char *port) {
+    printf("Configuring remote address...\n");
+    struct addrinfo hints;
+    memset(&hints, 0, sizeof(hints));
+    hints.ai_socktype = SOCK_STREAM;
+    struct addrinfo *peer_address;
+    if (getaddrinfo(hostname, port, &hints, &peer_address)) {
+        fprintf(stderr, "getaddrinfo() failed. (%d)\n", GETSOCKETERRNO());
+        exit(1);
+    }
+
+    printf("Remote address is: ");
+    char address_buffer[100];
+    char service_buffer[100];
+	// peer_address->ai_addr - это структура sockaddr одно из полей в структуре addrinfo
+	// struct sockaddr содержит  информацию об адресе - порт и IP address	
+    getnameinfo(peer_address->ai_addr, peer_address->ai_addrlen,
+            address_buffer, sizeof(address_buffer),
+            service_buffer, sizeof(service_buffer),
+            NI_NUMERICHOST);
+    printf("%s %s\n", address_buffer, service_buffer);
+
+    printf("Creating socket...\n");
+    SOCKET server;
+    server = socket(peer_address->ai_family,
+            peer_address->ai_socktype, peer_address->ai_protocol);
+    if (!ISVALIDSOCKET(server)) {
+        fprintf(stderr, "socket() failed. (%d)\n", GETSOCKETERRNO());
+        exit(1);
+    }
+
+    printf("Connecting...\n");
+	// int connect(int sockfd, struct sockaddr *serv_addr, int addrlen); // справка в конце кода
+    if (connect(server,
+                peer_address->ai_addr, peer_address->ai_addrlen)) {
+        fprintf(stderr, "connect() failed. (%d)\n", GETSOCKETERRNO());
+        exit(1);
+    }
+    freeaddrinfo(peer_address);
+
+    printf("Connected.\n\n");
+
+    return server;
+}
+
+//----------------------------
+
+
+int main(int argc, char *argv[]) {
+
+#if defined(_WIN32)
+    WSADATA d;
+    if (WSAStartup(MAKEWORD(2, 2), &d)) {
+        fprintf(stderr, "Failed to initialize.\n");
+        return 1;
+    }
+#endif
+
+
+    //if (argc < 2) {
+    //    fprintf(stderr, "usage: web_get url\n");
+    //    return 1;
+    //}
+    //char *url = argv[1];
+    char *url = "exeample.com:80";
+	//char *url = "ya.ru:443";
+
+    char *hostname, *port, *path;
+
+    // если параметры передаются в функцию по значению, то функция не изменяет
+    // значения передаваемых аргументов. Однако, используя в качестве параметров
+    // указатели, мы можем получить доступ к значению аргумента и изменить его.
+    parse_url(url, &hostname, &port, &path);
+    // здесь hostname, port, path не инициализированные указатели
+    // &hostname, &port, &path, извлекаем адреса указателей
+    // т.е. hostname, port, path это указатели на указатели
+
+    SOCKET server = connect_to_host(hostname, port);
+    // здесь hostname, port, после парсинга уже проинициализированы
+    send_request(server, hostname, port, path);
+
+    const clock_t start_time = clock();
+
+// #define RESPONSE_SIZE 32768 // было
+#define RESPONSE_SIZE 131072
+    char response[RESPONSE_SIZE+1];
+    char *p = response, *q; // *q объявлена как char
+    char *end = response + RESPONSE_SIZE;
+    char *body = 0;
+
+    // создаем , просто набор констант без имени перечисления(enum)
+    enum {length, chunked, connection};
+	/* enum - перечислимый тип. Перечисления используются для объявления символических
+    имен, которые являются ---целочисленными константами---. То есть типом перечисления,
+    по факту является целочисленным типом, и эти константы можно использоваться везде
+    где можно использовать целочисленные типы.
+    Как имя перечисления - ярлык, так и список переменных ---необязательны---, но один из
+    них должен присутствовать. Список перечислений - это разделенный запятыми список
+    идентификаторов. Как и в структурах, ярлык используется для объявления переменных
+    данного типа. Следующий фрагмент определяет перечисление coin и объявляет
+    переменную money этого типа:
+		enum coin { penny, nickel, dime, quarter, half_dollar, dollar);
+		enum coin money;
+    Имея данное определение и объявление, следующий тип присваивания совершенно корректен:
+		money = dime; */
+
+    int encoding = 0;
+    int remaining = 0;
+
+    while(1) {
+
+        if ((clock() - start_time) / CLOCKS_PER_SEC > TIMEOUT) {
+            fprintf(stderr, "timeout after %.2f seconds\n", TIMEOUT);
+            return 1;
+        }
+
+        if (p == end) {
+            fprintf(stderr, "out of buffer space\n");
+            return 1;
+        }
+
+        fd_set reads;
+        FD_ZERO(&reads);
+        FD_SET(server, &reads);
+
+        struct timeval timeout; // Структура struct timeval представляет календарное время. Она имеет следующие элементы: long int tv_sec. Этот представляет число секунд начиная с зпохи. Это эквивалентно нормальному значению time_t. long int tv_usec. Это - дробное второе значение, представляемое как число микросекунд.
+        timeout.tv_sec = 0;
+        timeout.tv_usec = 200000;
+
+        if (select(server+1, &reads, 0, 0, &timeout) < 0) {
+            fprintf(stderr, "select() failed. (%d)\n", GETSOCKETERRNO());
+            return 1;
+        }
+
+        if (FD_ISSET(server, &reads)) {
+            int bytes_received = recv(server, p, end - p, 0); // int recv(int s, char * buf, int len, int flags);
+            if (bytes_received < 1) {
+                if (encoding == connection && body) {
+                    printf("%.*s", (int)(end - body), body);
+                }
+
+                printf("\nConnection closed by peer.\n");
+                break;
+            }
+
+            // printf("Received (%d bytes): '%.*s'", bytes_received, bytes_received, p);
+            // по моему здесь опечатка - лишний bytes_received
+            /* выводим все, что пришло: заголовок и тело, по длинне bytes_received
+            строка формата "%.*s" сообщает функции printf, то что мы хотим напечатать
+            определенное количество символов - bytes_receive из того, что получили
+            в ответ в массив p
+            */
+
+            p += bytes_received;
+            *p = 0;
+
+            if (!body && (body = strstr(response, "\r\n\r\n"))) {
+                *body = 0;
+                body += 4;
+
+                printf("Received Headers:\n%s\n", response);
+
+                q = strstr(response, "\nContent-Length: ");
+                if (q) {
+                    encoding = length;
+                    q = strchr(q, ' ');
+                    q += 1;
+                    remaining = strtol(q, 0, 10); // Функция strtol преобразовывает строку в long int. Анализируя строку string, strtol интерпретирует её содержимое в целое число типа long int.
+
+                } else {
+                    q = strstr(response, "\nTransfer-Encoding: chunked");
+                    if (q) {
+                        encoding = chunked;
+                        remaining = 0;
+                    } else {
+                        encoding = connection;
+                    }
+                }
+                printf("\nReceived Body:\n");
+            }
+
+            if (body) {
+                if (encoding == length) {
+                    if (p - body >= remaining) {
+                        printf("%.*s", remaining, body);
+                        break;
+                    }
+                } else if (encoding == chunked) {
+                    do {
+                        if (remaining == 0) {
+                            if ((q = strstr(body, "\r\n"))) {
+                                remaining = strtol(body, 0, 16);
+                                if (!remaining) goto finish;
+                                body = q + 2;
+                            } else {
+                                break;
+                            }
+                        }
+                        if (remaining && p - body >= remaining) {
+                            printf("%.*s", remaining, body);
+                            body += remaining + 2;
+                            remaining = 0;
+                        }
+                    } while (!remaining);
+                }
+            } //if (body)
+        } //if FDSET
+    } //end while(1)
+finish:
+
+    printf("\nClosing socket...\n");
+    CLOSESOCKET(server);
+
+#if defined(_WIN32)
+    WSACleanup();
+#endif
+
+    printf("Finished.\n");
+    return 0;
+}
+
+/*
+socket() создаёт конечную точку соединения и возвращает дескриптор. 
+Прототип
+
+#include <sys/types.h>
+#include <sys/socket.h>
+int socket(int domain, int type, int protocol);
+Функция возвращает −1 в случае ошибки. Иначе, она возвращает целое число, представляющее присвоенный дескриптор.
+
+socket() принимает три аргумента:
+    domain, указывающий семейство протоколов создаваемого сокета. Этот параметр задает правила использования именования и формат адреса. Например:
+        PF_INET для сетевого протокола IPv4 или
+        PF_INET6 для IPv6.
+        PF_UNIX для локальных сокетов (используя файл).
+    type (тип) один из:
+        SOCK_STREAM надёжная потокоориентированная служба (TCP) (сервис) или потоковый сокет
+        SOCK_DGRAM служба датаграмм (UDP) или датаграммный сокет
+        SOCK_SEQPACKET надёжная служба последовательных пакетов
+        SOCK_RAW Сырой сокет — сырой протокол поверх сетевого уровня.
+    protocol определяет используемый транспортный протокол. Самые распространённые — это IPPROTO_TCP, IPPROTO_SCTP, IPPROTO_UDP, IPPROTO_DCCP. Эти протоколы указаны в <netinet/in.h>. Значение «0» может быть использовано для выбора протокола по умолчанию из указанного семейства (domain) и типа (type).
+*/
+/*
+int connect(int sockfd, struct sockaddr *serv_addr, int addrlen);
+
+Здесь sockfd - сокет, который будет использоваться для обмена данными с сервером,
+serv_addr содержит указатель на структуру с адресом сервера, а addrlen - длину
+этой структуры. Обычно сокет не требуется предварительно привязывать к локальному
+адресу, так как функция connect сделает это за вас, подобрав подходящий свободный
+порт. Вы можете принудительно назначить клиентскому сокету некоторый номер порта,
+используя bind перед вызовом connect.
+*/
+
+/*
+При установке или получении параметров сокета на IPPROTO_IP уровне приложения C / C ++ Winsock,
+предназначенного для Windows, включение правильного заголовка и файла библиотеки в проект
+программы имеет решающее значение. Если файлы заголовка и библиотеки не совпадают должным
+образом setsockopt или getsockopt могут завершиться ошибкой выполнения 10042 ( WSAENOPROTOOPT).
+В некоторых случаях, даже если API возвращается успешно, значение параметра, которое вы
+устанавливаете или получаете, может не соответствовать вашим ожиданиям.
+
+Чтобы избежать этой проблемы, соблюдайте следующие правила:
+
+    Программа, которая включает, Winsock.h должна связываться только с Wsock32.lib.
+    Программа , которая включает в себя Ws2tcpip.hможет связать либо с Ws2_32.lib
+    или Wsock32.lib.
+    Ws2tcpip.h должен быть явно включен после Winsock2.h, чтобы использовать
+    параметры сокета на этом уровне.
+*/
+
+/*int recv (int socket, void * buffer, size_t size, int flags)
+Функция recv аналогична функции чтения, но с дополнительными флагами flags.
+Возможные значения флагов описаны в разделе Параметры данных сокета.
+Если для сокета установлен неблокирующий режим и данные недоступны для чтения,
+recv завершается немедленно, а не ждет.
+
+int recv(int s, char * buf, int len, int flags);
+Первый аргумент - сокет-дескриптор, из которого читаются данные. Второй и третий а
+ргументы - соответственно, адрес и длина буфера для записи читаемых данных. Четвертый
+параметр - это комбинация битовых флагов, управляющих режимами чтения. Если аргумент
+flags равен нулю, то считанные данные удаляются из сокета. Если значение flags есть
+MSG_PEEK, то данные не удаляются и могут быть считаны последущим вызовом ( или
+вызовами ) recv.
+
+Функция возвращает число считанных байтов или -1 в случае ошибки. Следует отметить,
+что нулевое значение не является ошибкой. Оно сигнализирует об отсутствии записанных
+в сокет процессом-поставщиком данных.
+
+Эта функция определяется как точка отмены в многопоточных программах, поэтому
+нужно быть готовым к этому и убедиться, что выделенные ресурсы (например, память,
+дескрипторы файлов, семафоры или что-то еще) освобождены, даже если поток отменен.
+Заголовочные файлы:
+sys / socket.h
+*/
+
+/*
+struct addrinfo { 
+  int              ai_flags;      // AI_PASSIVE, AI_CANONNAME,  т.д. 
+  int              ai_family;     // AF_INET, AF_INET6, AF_UNSPEC 
+  int              ai_socktype;   // SOCK_STREAM, SOCK_DGRAM 
+  int              ai_protocol;   // используйте 0 для"any" 
+  size_t           ai_addrlen;    // размер ai_addr в байтах  
+  struct sockaddr  *ai_addr;      // struct sockaddr_in или _in6 
+  char             *ai_canonname; // полное каноническое имя хоста 
+  struct addrinfo  *ai_next;      // связанный список, следующий 
+ }; 
+*/
+
+/*
+  struct in_addr { 
+  uint32_t  s_addr;  // Интернет адрес  // это 32-битный int (4 байта) 
+};
+*/
+
+/*
+В структуре SOCKADDR_STORAGE хранится информация об адресе сокета.
+typedef struct sockaddr_storage {
+  short   ss_family;  // Семейство ---адресов--- сокета, например AF_INET.
+  char    __ss_pad1[_SS_PAD1SIZE];  // __ss_pad1 Зарезервировано. Определяется как 48-битный блокнот, который гарантирует, что SOCKADDR_STORAGE достигает 64-битного выравнивания.
+
+  __int64 __ss_align;  // Зарезервировано. Используется компилятором для выравнивания структуры
+  char    __ss_pad2[_SS_PAD2SIZE];  // Зарезервировано. Используется компилятором для выравнивания структуры
+} SOCKADDR_STORAGE, *PSOCKADDR_STORAGE;
+
+sockaddr_storage, созданна достаточно большой, чтобы содержать обе IPv4 и IPv6 
+структуры. Судя по некоторым вызовам вы не знаете наперёд каким адресом  загружать вашу структуру  sockaddr: IPv4 или IPv6.Так передайте эту параллельную структуру, подобную struct sockaddr, только больше, и приведите к нужному типу.
+*/
+
+/*
+Структура SOCKADDR используется для хранения IP-адреса компьютера, участвующего в обмене данными через сокеты Windows.
+struct sockaddr {
+    unsigned short sa_family;
+    char           sa_data[14];
+};
+//sa_family будет либо AF_INET (IPv4) или AF_INET6 
+// sa_data  содержит ----адрес назначения и номер порта---- для сокета.
+*/

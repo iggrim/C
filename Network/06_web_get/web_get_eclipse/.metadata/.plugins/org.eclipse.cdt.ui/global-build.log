@@ -1,0 +1,935 @@
+04:11:17 **** Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+04:11:42 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+04:12:54 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+04:12:59 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+04:14:23 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+04:16:14 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+04:16:26 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+04:17:51 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+04:23:58 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+04:24:19 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+04:25:52 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+04:26:51 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+04:28:12 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+04:28:44 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+04:34:08 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+04:34:14 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+04:44:26 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+04:44:56 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+04:46:40 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+15:24:41 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+15:25:16 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+19:02:36 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+22:43:52 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+22:44:03 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+11:44:55 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+11:45:30 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get (1-я копия).c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get (1-я копия).d" -MT"web_get\ (1-я\ копия).d" -o "web_get (1-я копия).o" "../web_get (1-я копия).c"
+Finished building: ../web_get (1-я копия).c
+ 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+../web_get.c: In function ‘main’:
+../web_get.c:156:5: warning: ‘hostname’ is used uninitialized in this function [-Wuninitialized]
+  156 |     parse_url(url, hostname, &port, &path);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get\ (1-я\ копия).o ./web_get.o   
+/bin/sh: 1: Syntax error: "(" unexpected
+make: *** [makefile:31: web_get] Ошибка 2
+"make all" terminated with exit code 2. Build might be incomplete.
+11:46:58 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get\ (1-я\ копия).o ./web_get.o   
+/bin/sh: 1: Syntax error: "(" unexpected
+make: *** [makefile:31: web_get] Ошибка 2
+"make all" terminated with exit code 2. Build might be incomplete.
+11:48:07 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get\ (1-я\ копия).o ./web_get.o   
+/bin/sh: 1: Syntax error: "(" unexpected
+make: *** [makefile:31: web_get] Ошибка 2
+"make all" terminated with exit code 2. Build might be incomplete.
+11:50:00 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+11:50:52 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+../web_get.c: In function ‘main’:
+../web_get.c:156:5: warning: ‘hostname’ is used uninitialized in this function [-Wuninitialized]
+  156 |     parse_url(url, hostname, &port, &path);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+11:50:58 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+11:52:05 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+11:52:11 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+11:56:44 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+12:02:46 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+../web_get.c: In function ‘main’:
+../web_get.c:156:5: warning: ‘hostname’ is used uninitialized in this function [-Wuninitialized]
+  156 |     parse_url(url, hostname, &port, &path);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+12:02:52 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+12:11:08 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+12:11:13 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+12:23:43 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+12:24:04 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+12:24:11 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+../web_get.c: In function ‘parse_url’:
+../web_get.c:42:15: warning: assignment to ‘char’ from ‘char *’ makes integer from pointer without a cast [-Wint-conversion]
+   42 |     *hostname = p;
+      |               ^
+../web_get.c:73:20: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘int’ [-Wformat=]
+   73 |     printf("host: %s\n", *hostname);
+      |                   ~^     ~~~~~~~~~
+      |                    |     |
+      |                    |     int
+      |                    char *
+      |                   %d
+../web_get.c: In function ‘main’:
+../web_get.c:156:5: warning: ‘hostname’ is used uninitialized in this function [-Wuninitialized]
+  156 |     parse_url(url, hostname, &port, &path);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+12:26:21 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+12:26:29 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+12:27:59 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+17:17:48 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+17:18:08 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+17:47:04 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+../web_get.c: In function ‘parse_url’:
+../web_get.c:55:14: warning: assignment to ‘char’ from ‘void *’ makes integer from pointer without a cast [-Wint-conversion]
+   55 |         *p++ = NULL;   // инкриментируем значение указателя
+      |              ^
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+17:48:36 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+../web_get.c: In function ‘parse_url’:
+../web_get.c:55:14: warning: assignment to ‘char’ from ‘void *’ makes integer from pointer without a cast [-Wint-conversion]
+   55 |         *p++ = NULL;   // инкриментируем значение указателя
+      |              ^
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+17:49:12 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+17:49:22 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+17:56:43 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+17:56:51 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+17:56:58 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+17:57:28 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+18:00:10 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+18:01:40 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+18:01:56 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+18:04:00 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+18:05:21 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+18:10:14 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+18:11:06 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+18:11:11 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+18:13:51 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+18:13:55 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+18:18:23 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+18:20:40 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+18:20:45 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+18:21:09 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+18:21:15 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+18:22:06 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+../web_get.c: In function ‘parse_url’:
+../web_get.c:55:9: error: unknown type name ‘было’
+   55 |         было *p++  = 0;   // инкриментируем значение указателя
+      |         ^~~~
+../web_get.c:55:20: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘++’ token
+   55 |         было *p++  = 0;   // инкриментируем значение указателя
+      |                ^~
+make: *** [subdir.mk:20: web_get.o] Ошибка 1
+"make all" terminated with exit code 2. Build might be incomplete.
+18:22:35 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+18:22:41 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+18:23:50 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+18:23:54 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+18:25:16 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+18:25:44 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+18:27:01 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+18:27:55 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+18:29:49 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+18:52:38 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+18:53:35 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+18:53:58 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+18:56:13 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+18:59:32 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+19:00:04 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+19:00:08 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+19:02:19 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+19:02:23 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+19:29:03 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+../web_get.c: In function ‘parse_url’:
+../web_get.c:54:19: warning: initialization of ‘char *’ from ‘char’ makes pointer from integer without a cast [-Wint-conversion]
+   54 |     char *start = *p;
+      |                   ^
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+19:29:31 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+19:29:44 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+19:31:44 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+19:31:49 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+19:35:03 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+12:30:25 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+12:31:04 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+12:31:17 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+12:32:29 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+12:41:51 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+13:04:31 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+13:22:48 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+13:23:06 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+13:36:47 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+13:36:58 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+13:37:59 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
+17:12:54 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+18:29:51 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+19:15:34 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+20:42:58 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+13:05:18 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+18:06:25 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+../web_get.c: In function ‘main’:
+../web_get.c:253:9: error: redefinition of ‘i_1’
+  253 |     int i_1 = chunked;
+      |         ^~~
+../web_get.c:252:9: note: previous definition of ‘i_1’ was here
+  252 |     int i_1 = length;
+      |         ^~~
+../web_get.c:254:9: error: redefinition of ‘i_1’
+  254 |     int i_1 = connection;
+      |         ^~~
+../web_get.c:253:9: note: previous definition of ‘i_1’ was here
+  253 |     int i_1 = chunked;
+      |         ^~~
+../web_get.c:254:9: warning: unused variable ‘i_1’ [-Wunused-variable]
+  254 |     int i_1 = connection;
+      |         ^~~
+make: *** [subdir.mk:20: web_get.o] Ошибка 1
+"make all" terminated with exit code 2. Build might be incomplete.
+18:07:00 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+../web_get.c: In function ‘main’:
+../web_get.c:253:9: error: redefinition of ‘i_1’
+  253 |     int i_1 = chunked;
+      |         ^~~
+../web_get.c:252:9: note: previous definition of ‘i_1’ was here
+  252 |     int i_1 = length;
+      |         ^~~
+../web_get.c:254:9: error: redefinition of ‘i_1’
+  254 |     int i_1 = connection;
+      |         ^~~
+../web_get.c:253:9: note: previous definition of ‘i_1’ was here
+  253 |     int i_1 = chunked;
+      |         ^~~
+../web_get.c:254:9: warning: unused variable ‘i_1’ [-Wunused-variable]
+  254 |     int i_1 = connection;
+      |         ^~~
+make: *** [subdir.mk:20: web_get.o] Ошибка 1
+"make all" terminated with exit code 2. Build might be incomplete.
+18:07:41 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+Building file: ../web_get.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"web_get.d" -MT"web_get.o" -o "web_get.o" "../web_get.c"
+../web_get.c: In function ‘main’:
+../web_get.c:254:9: warning: unused variable ‘i_3’ [-Wunused-variable]
+  254 |     int i_3 = connection;
+      |         ^~~
+../web_get.c:253:9: warning: unused variable ‘i_2’ [-Wunused-variable]
+  253 |     int i_2 = chunked;
+      |         ^~~
+../web_get.c:252:9: warning: unused variable ‘i_1’ [-Wunused-variable]
+  252 |     int i_1 = length;
+      |         ^~~
+Finished building: ../web_get.c
+ 
+Building target: web_get
+Invoking: GCC C Linker
+gcc  -o "web_get" ./web_get.o   
+Finished building target: web_get
+ 
+18:09:46 **** Incremental Build of configuration Debug for project web_get ****
+make all 
+make: Цель «all» не требует выполнения команд.
